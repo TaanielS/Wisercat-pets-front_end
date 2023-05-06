@@ -54,6 +54,26 @@ export class AddPetComponent implements OnInit {
     country: new FormControl('', [Validators.required, Validators.pattern("Estonia|Latvia|Lithuania|Finland|Sweden|Norway")]),
   });
 
+  get code() {
+    return this.petForm.get("code");
+  }
+
+  get name() {
+    return this.petForm.get("name");
+  }
+
+  get type() {
+    return this.petForm.get("type");
+  }
+
+  get furColor() {
+    return this.petForm.get("furColor");
+  }
+
+  get country() {
+    return this.petForm.get("country");
+  }
+
   onSubmit(): void {
     const isValid = this.petForm.valid;
     console.log("Form is valid:", isValid);
@@ -64,8 +84,9 @@ export class AddPetComponent implements OnInit {
         next: (res) => {
           console.log(res);
           this.submitted = true
+          console.log("submitted")
         },
-        error: (e) => console.log(e)
+        error: (e) => { if (e.status != 201) console.log(e.status); else console.log("Success!") }
       });
     }
     else {
