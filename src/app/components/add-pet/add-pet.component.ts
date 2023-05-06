@@ -47,7 +47,7 @@ export class AddPetComponent implements OnInit {
   }
 
   petForm = new FormGroup({
-    code: new FormControl(0, [Validators.required, Validators.pattern("\\d+")]),
+    code: new FormControl(null, [Validators.required, Validators.pattern("\\d+")]),
     name: new FormControl('', [Validators.required, Validators.maxLength(25)]),
     type: new FormControl('', [Validators.required, Validators.pattern("Cat|Dog|Horse|Rabbit|Parrot")]),
     furColor: new FormControl('', [Validators.required, Validators.pattern("Black|White|Brown|Yellow|Blue")]),
