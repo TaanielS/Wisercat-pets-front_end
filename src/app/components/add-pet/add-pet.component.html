@@ -28,7 +28,8 @@
                     <div class="mb-3">
                         <label for="name">Name</label>
                         <div class="input-group">
-                            <input type="text" class="{{name?.valid ? 'form-control is-valid': 'form-control'}}" id="name" placeholder="Name" formControlName="name">
+                            <input type="text" class="{{name?.valid ? 'form-control is-valid': 'form-control'}}"
+                                id="name" placeholder="Name" formControlName="name">
                             <div *ngIf="name?.invalid && (name?.touched || name?.dirty)"
                                 class="invalid-feedback d-block">
                                 <div *ngIf="name?.errors?.['required']">
@@ -44,7 +45,8 @@
                     <div class="mb-3">
                         <label for="code">Code</label>
                         <div class="input-group">
-                            <input type="text" class="{{code?.valid ? 'form-control is-valid': 'form-control'}}" id="code" placeholder="Code" formControlName="code">
+                            <input type="text" class="{{code?.valid ? 'form-control is-valid': 'form-control'}}"
+                                id="code" placeholder="Code" formControlName="code">
                             <div *ngIf="code?.invalid && (code?.touched || code?.dirty)"
                                 class="invalid-feedback d-block">
                                 <div *ngIf="code?.errors?.['required']">
@@ -59,7 +61,9 @@
 
                     <div class="mb-3">
                         <label for="types">Type</label>
-                        <select class="{{type?.valid ? 'custom-select d-block w-100 is-valid': 'custom-select d-block w-100'}}" id="types" formControlName="type">
+                        <select
+                            class="{{type?.valid ? 'custom-select d-block w-100 is-valid': 'custom-select d-block w-100'}}"
+                            id="types" formControlName="type">
                             <option value="">Choose...</option>
                             <option *ngFor="let type of types">{{type}}</option>
                         </select>
@@ -72,7 +76,9 @@
 
                     <div class="mb-3">
                         <label for="colors">Fur color</label>
-                        <select class="{{furColor?.valid ? 'custom-select d-block w-100 is-valid': 'custom-select d-block w-100'}}" id="colors" formControlName="furColor">
+                        <select
+                            class="{{furColor?.valid ? 'custom-select d-block w-100 is-valid': 'custom-select d-block w-100'}}"
+                            id="colors" formControlName="furColor">
                             <option value="">Choose...</option>
                             <option *ngFor="let furColor of furColors">{{furColor}}</option>
                         </select>
@@ -86,7 +92,9 @@
 
                     <div class="mb-3">
                         <label for="countries">Country of origin</label>
-                        <select class="{{country?.valid ? 'custom-select d-block w-100 is-valid': 'custom-select d-block w-100'}}" id="countries" formControlName="country">
+                        <select
+                            class="{{country?.valid ? 'custom-select d-block w-100 is-valid': 'custom-select d-block w-100'}}"
+                            id="countries" formControlName="country">
                             <option value="">Choose...</option>
                             <option *ngFor="let country of countries">{{country}}</option>
                         </select>
