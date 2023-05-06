@@ -1,5 +1,5 @@
-import { Component, OnInit} from '@angular/core';
-import { Pet } from 'src/app/models/pet.model';
+import { Component, OnInit } from '@angular/core';
+import { Option } from 'src/app/models/option.model';
 import { PetManagementService } from 'src/app/services/pet-management.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
@@ -10,12 +10,40 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 })
 
 export class AddPetComponent implements OnInit {
+  options?: Option[];
+  types?: String[];
+  furColors?: String[];
+  countries?: String[];
   submitted = false;
 
   constructor(private petManagementService: PetManagementService) { }
 
   ngOnInit(): void {
-      
+    this.retrieveOptions();
+  }
+
+  retrieveOptions(): void {
+    this.petManagementService.getOption("type").subscribe({
+      next: (data) => {
+        this.types = data;
+        console.log(data);
+      },
+      error: (e) => console.log(e)
+    });
+    this.petManagementService.getOption("furColor").subscribe({
+      next: (data) => {
+        this.furColors = data;
+        console.log(data);
+      },
+      error: (e) => console.log(e)
+    });
+    this.petManagementService.getOption("country").subscribe({
+      next: (data) => {
+        this.countries = data;
+        console.log(data);
+      },
+      error: (e) => console.log(e)
+    });
   }
 
   petForm = new FormGroup({
@@ -28,10 +56,14 @@ export class AddPetComponent implements OnInit {
 
   onSubmit(): void {
     const data = this.petForm.value;
-    this.petManagementService.create(data).subscribe({next: (res) => {console.log(res); 
-                                                                      this.submitted = true},
-                                                                    error: (e) => console.log(e)});
-    }
-    
+    this.petManagementService.create(data).subscribe({
+      next: (res) => {
+        console.log(res);
+        this.submitted = true
+      },
+      error: (e) => console.log(e)
+    });
+  }
+
 
 }
