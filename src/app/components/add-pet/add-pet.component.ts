@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Option } from 'src/app/models/option.model';
 import { PetManagementService } from 'src/app/services/pet-management.service';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-pet',
@@ -47,23 +47,29 @@ export class AddPetComponent implements OnInit {
   }
 
   petForm = new FormGroup({
-    code: new FormControl(0),
-    name: new FormControl(''),
-    type: new FormControl(''),
-    furColor: new FormControl(''),
-    country: new FormControl(''),
+    code: new FormControl(0, [Validators.required, Validators.pattern("\\d+")]),
+    name: new FormControl('', [Validators.required, Validators.maxLength(25)]),
+    type: new FormControl('', [Validators.required, Validators.pattern("Cat|Dog|Horse|Rabbit|Parrot")]),
+    furColor: new FormControl('', [Validators.required, Validators.pattern("Black|White|Brown|Yellow|Blue")]),
+    country: new FormControl('', [Validators.required, Validators.pattern("Estonia|Latvia|Lithuania|Finland|Sweden|Norway")]),
   });
 
   onSubmit(): void {
-    const data = this.petForm.value;
-    this.petManagementService.create(data).subscribe({
-      next: (res) => {
-        console.log(res);
-        this.submitted = true
-      },
-      error: (e) => console.log(e)
-    });
+    const isValid = this.petForm.valid;
+    console.log("Form is valid:", isValid);
+    if (isValid) {
+      console.log("Sending the pet form...");
+      const data = this.petForm.value;
+      this.petManagementService.create(data).subscribe({
+        next: (res) => {
+          console.log(res);
+          this.submitted = true
+        },
+        error: (e) => console.log(e)
+      });
+    }
+    else {
+      console.log("ERROR: the pet form had bad inputs.");
+    }
   }
-
-
 }
