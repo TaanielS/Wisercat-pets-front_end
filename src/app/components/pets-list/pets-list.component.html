@@ -23,21 +23,21 @@
 
         <div class="row">
             <a routerLink="/add" routerLinkActive="active" class="btn btn-primary">Add pet</a>
-            <table class="table">
+            <table class="table" matSort (matSortChange)="sortData($event)">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Code</th>
-                        <th scope="col">Type</th>
-                        <th scope="col">Fur color</th>
-                        <th scope="col">Country</th>
+                        <th mat-sort-header="name" scope="col">Name</th>
+                        <th mat-sort-header="code" scope="col">Code</th>
+                        <th mat-sort-header="type" scope="col">Type</th>
+                        <th mat-sort-header="furColor" scope="col">Fur color</th>
+                        <th mat-sort-header="country" scope="col">Country</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let pet of pets">
-                        <th scope="row">1</th>
+                    <tr *ngFor="let pet of sortedPets;let indexOfelement=index;">
+                        <th scope="row">{{indexOfelement + 1}}</th>
                         <td>{{ pet.name }}</td>
                         <td>{{ pet.code }}</td>
                         <td>{{ pet.type }}</td>
