@@ -21,6 +21,10 @@ export class PetManagementService {
     return this.http.post(baseUrl, data);
   }
 
+  edit(petCode: string, data: any): Observable<any> {
+    return this.http.put(baseUrl + "/" + petCode, data);
+  }
+
   getOption(optionName: String): Observable<any> {
     return this.http.get(optionsUrl + optionName);
   }

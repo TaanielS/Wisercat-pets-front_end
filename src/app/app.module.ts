@@ -12,12 +12,14 @@ import { AppComponent } from './app.component';
 import { AddPetComponent } from './components/add-pet/add-pet.component';
 import { PetsListComponent } from './components/pets-list/pets-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditPetComponent } from './components/edit-pet/edit-pet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddPetComponent,
-    PetsListComponent
+    PetsListComponent,
+    EditPetComponent
   ],
   imports: [
     BrowserModule,
