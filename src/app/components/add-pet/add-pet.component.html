@@ -109,8 +109,10 @@
                     <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="petForm.invalid">
                         Add Pet
                     </button>
-                    <div *ngIf="submitted">
-                        <h4>Pet was submitted successfully!</h4>
+                    <div *ngIf=this.submitted>
+                        <h4>Request is sent!
+                            <a [routerLink]="['/pets']">Click here to see the pets list.</a>
+                        </h4>
                     </div>
 
                 </form>

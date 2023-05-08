@@ -77,14 +77,15 @@ export class AddPetComponent implements OnInit {
   onSubmit(): void {
     const isValid = this.petForm.valid;
     console.log("Form is valid:", isValid);
+    this.submitted = true;
     if (isValid) {
       console.log("Sending the pet form...");
       const data = this.petForm.value;
+      this.petForm.reset();
       this.petManagementService.create(data).subscribe({
         next: (res) => {
           console.log(res);
-          this.submitted = true
-          console.log("submitted")
+          console.log("submitted");
         },
         error: (e) => { if (e.status != 201) console.log(e.status); else console.log("Success!") }
       });
