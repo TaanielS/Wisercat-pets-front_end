@@ -1,15 +1,7 @@
-# PetsFrontEnd
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
 # Wisercat 2023 front-end
 
 Link for the back-end application: [https://github.com/TaanielS/Wisercat-pets-back_end](https://github.com/TaanielS/Wisercat-pets-back_end)\
-The program can be started by running `ng serve` in the main folder.
+The program can be started by running `ng serve` in the main folder. It can be seen on `http://localhost:4200/`.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.\
 Dependencies' versions can be found in package.json.
