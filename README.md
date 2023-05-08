@@ -16,7 +16,7 @@ Dependencies' versions can be found in package.json.
 *	~~Values of select lists have to be populated with data from database.~~
 
 ### Optional tasks:
-*	~~User can edit pets.~~ `(Edit pets is currently not available on the website. It's possible via Postman for example.)`
+*	~~User can edit pets.~~
 *	Log in with one of the created user accounts (registration does not have to be implemented).
 *	Create 3 user accounts into the database (username and password). `(back-end branch withUser has this)`
 *	User is not allowed to see other user’s pets.
@@ -36,8 +36,7 @@ Dependencies' versions can be found in package.json.
 *	~~API has to be RESTful.~~
 
 ### TODO:
-*   Make it possible to edit pets that are shown on the list. When `Edit pet` is clicked, show already filled out form, where user can make the changes.
 *   Show, allow to add and modify only pets that belong to the signed in user.
 
 ### Thoughts:
-*   I was not familiar with Angular, so it took some time to get it going. Luckly I knew some Vue.js so I knew the basics of it. I had to do some googeling to find solutions that are efficient. Adding sorting to the table took the most time, but it's nice that there are documentations like [this](https://material.angular.io/components/sort/overview).
+*   I was not familiar with Angular, so it took some time to get it going. Luckly I knew some Vue.js so I knew the basics of it. I had to do some googeling to find solutions that are efficient. Adding sorting to the table took the most time, but it's nice that there are documentations like [this](https://material.angular.io/components/sort/overview). I would like to add an autofill to a form when `Edit pet` is clicked.
