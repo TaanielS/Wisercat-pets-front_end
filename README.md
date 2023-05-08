@@ -39,4 +39,4 @@ Dependencies' versions can be found in package.json.
 *   Show, allow to add and modify only pets that belong to the signed in user.
 
 ### Thoughts:
-*   I was not familiar with Angular, so it took some time to get it going. Luckly I knew some Vue.js so I knew the basics of it. I had to do some googeling to find solutions that are efficient. Adding sorting to the table took the most time, but it's nice that there are documentations like [this](https://material.angular.io/components/sort/overview). I would like to add an autofill to a form when `Edit pet` is clicked.
+*   I was not familiar with Angular, so it took some time to get it going. Luckly I knew some Vue.js so I knew the basics of it. I had to do some googeling to find solutions that are efficient. Implementing front-end took more time than a back-end, around 16 hours. Adding sorting to the table took the most time, but it's nice that there are documentations like [this](https://material.angular.io/components/sort/overview). I would like to add an autofill to a form when `Edit pet` is clicked.
